@@ -23,6 +23,16 @@ def save_thank_you_letters(id, form_letter)
   end
 end
 
+def clean_telephone(telephone)
+  telephone = telephone.to_s
+  if telephone.length == 11 && telephone[0] == "1"
+    telephone = telephone[0..-1]
+  elsif telephone.length != 10
+    telephone = nil
+  end
+end
+
+
 template_letter = File.read "form_letter.erb"
 erb_template = ERB.new template_letter
 
