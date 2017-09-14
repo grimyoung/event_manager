@@ -33,6 +33,7 @@ def clean_telephone(telephone)
 end
 
 
+
 template_letter = File.read "form_letter.erb"
 erb_template = ERB.new template_letter
 
